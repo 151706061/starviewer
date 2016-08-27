@@ -21,7 +21,8 @@ FORMS += qlogviewerbase.ui \
     q2dviewerconfigurationscreenbase.ui \
     qlayoutoptionswidgetbase.ui \
     qnotificationpopupbase.ui \
-    qfusionlayoutwidgetbase.ui
+    qfusionlayoutwidgetbase.ui \
+    qexternalapplicationconfigurationscreenbase.ui
 
 TRANSLATIONS += core_ca_ES.ts \
     core_es_ES.ts \
@@ -428,7 +429,12 @@ HEADERS += extensionfactory.h \
     gridicon.h \
     itemmenu.h \
     easylogging++.h \
-    volumefillerstep.h
+    volumefillerstep.h \
+    qexternalapplicationconfigurationscreen.h \
+    externalapplication.h \
+    externalapplicationsmanager.h \
+    encapsulateddocument.h \
+    encapsulateddocumentfillerstep.h
 
 SOURCES += extensionmediator.cpp \
     displayableid.cpp \
@@ -804,7 +810,13 @@ SOURCES += extensionmediator.cpp \
     qfusionlayoutwidget.cpp \
     gridicon.cpp \
     itemmenu.cpp \
-    volumefillerstep.cpp
+    volumefillerstep.cpp \
+    qexternalapplicationconfigurationscreen.cpp \
+    externalapplication.cpp \
+    externalapplicationsmanager.cpp \
+    encapsulateddocument.cpp \
+    encapsulateddocumentfillerstep.cpp \
+    starviewerapplication.cpp
 
 win32 {
     HEADERS += windowsfirewallaccess.h \
@@ -828,10 +840,10 @@ include(../translations.pri)
 include(../threadweaver.pri)
 QT += xml \
     network \
-    webkit \
     xmlpatterns \
     opengl \
     qml \
-    declarative \
+    quick \
+    quickwidgets \
     concurrent \
-    webkitwidgets
+    webenginewidgets

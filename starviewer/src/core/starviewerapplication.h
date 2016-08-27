@@ -20,10 +20,10 @@
 namespace udg {
 
 const QString StarviewerVersionString("0.14.0-devel");
-const QString StarviewerBuildID("2015122300");
+const QString StarviewerBuildID("2016061600");
 
 // Indica per aquesta versió d'starviewer quina és la revisió de bd necessària
-const int StarviewerDatabaseRevisionRequired(9592);
+const int StarviewerDatabaseRevisionRequired(9593);
 
 const QString OrganizationNameString("GILab");
 const QString OrganizationDomainString("starviewer.udg.edu");
@@ -45,7 +45,12 @@ const QString UserLogsPath(UserDataRootPath + "log/");
 /// Ruta absoluta del fitxer de log
 const QString UserLogsFile(UserLogsPath + "starviewer.log");
 
-// TODO const QString LogConfigurationFileLocation();
+// Note: the following two are methods because they depend on QApplication being initialized.
+
+/// Returns the base directory where the application is installed.
+QString installationPath();
+/// Returns the root source directory (the one containing src).
+QString sourcePath();
 
 }
 

@@ -95,6 +95,8 @@ const QString CoreSettings::DefaultPACSListToQuery("PACS/defaultPACSListToQuery"
 //TODO:Aquesta clau està duplicada a InputOutputSettings
 const QString CoreSettings::PacsListConfigurationSectionName = "PacsList";
 
+const QString CoreSettings::ExternalApplicationsConfigurationSectionName = "ExternalApplications";
+
 const QString Q2DViewerBase("2DViewer/");
 const QString CoreSettings::EnableQ2DViewerSliceScrollLoop(Q2DViewerBase + "enable2DViewerSliceScrollLoop");
 const QString CoreSettings::EnableQ2DViewerPhaseScrollLoop(Q2DViewerBase + "enable2DViewerPhaseScrollLoop");
@@ -111,6 +113,8 @@ const QString CoreSettings::MeasurementDisplayVerbosity(Q2DViewerBase + "Measure
 const QString CoreSettings::SUVMeasurementNormalizationType(Q2DViewerBase + "Measurement/SUVMeasurementNormalizationType");
 
 const QString CoreSettings::EnabledSyncActionsKey("enabledSyncActions");
+
+const QString CoreSettings::DontForceMultiSampling("DontForceMultiSampling");
 
 CoreSettings::CoreSettings()
 {
@@ -155,6 +159,7 @@ void CoreSettings::init()
     settingsRegistry->addSetting(ModalitiesToApplyHangingProtocolsAsFirstOption, "CR;CT;MG;MR;US");
     settingsRegistry->addSetting(ModalitiesWithPropagationEnabledByDefault, "CT;MR;PT");
     settingsRegistry->addSetting(SUVMeasurementNormalizationType, "BodyWeight");
+    settingsRegistry->addSetting(DontForceMultiSampling, false);
 }
 
 } // End namespace udg

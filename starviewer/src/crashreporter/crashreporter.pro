@@ -31,7 +31,8 @@ SOURCES = crashreporter.cpp \
           ../core/coresettings.cpp \
           ../core/settingsaccesslevelfilereader.cpp \
           ../main/applicationtranslationsloader.cpp \
-          ../core/logging.cpp
+          ../core/logging.cpp \
+          ../core/starviewerapplication.cpp
 
 TRANSLATIONS += crashreporter_ca_ES.ts \
                 crashreporter_es_ES.ts \
@@ -40,7 +41,8 @@ TRANSLATIONS += crashreporter_ca_ES.ts \
 INCLUDEPATH += ../thirdparty/breakpad ../core
 
 macx {
-    HEADERS += ../thirdparty/breakpad/common/mac/HTTPMultipartUpload.h
+    HEADERS += ../thirdparty/breakpad/common/mac/HTTPMultipartUpload.h \
+               ../thirdparty/breakpad/common/mac/GTMDefines.h
     OBJECTIVE_SOURCES += crashreportersender_mac.mm \
                          ../thirdparty/breakpad/common/mac/HTTPMultipartUpload.mm
     ICON = ../main/images/starviewer.icns
@@ -49,6 +51,7 @@ linux* {
     HEADERS += ../thirdparty/breakpad/common/linux/http_upload.h
     SOURCES += crashreportersender_linux.cpp \
                ../thirdparty/breakpad/common/linux/http_upload.cc
+    LIBS += -ldl
 }
 win32 {
     HEADERS += ../thirdparty/breakpad/common/windows/http_upload.h

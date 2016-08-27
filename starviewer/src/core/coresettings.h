@@ -112,6 +112,9 @@ public:
     //TODO: Aquesta clau està duplicada a InputOutputSettings
     static const QString PacsListConfigurationSectionName;
 
+    /// List containing the external applications.
+    static const QString ExternalApplicationsConfigurationSectionName;
+
     /// Defineix si el loop està habilitat en l'scroll d'imatges/fases del visor 2D
     static const QString EnableQ2DViewerSliceScrollLoop;
     static const QString EnableQ2DViewerPhaseScrollLoop;
@@ -146,6 +149,10 @@ public:
 
     /// Corresponding key to the enabled sync actions
     static const QString EnabledSyncActionsKey;
+
+    /// Multi-sampling is forced to 8 multi-samples in QViewer unless this is true.
+    static const QString DontForceMultiSampling;
+
 };
 
 } // End namespace udg
